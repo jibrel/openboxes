@@ -10,6 +10,7 @@
 package org.pih.warehouse.order
 
 import org.pih.warehouse.core.Location
+import org.pih.warehouse.core.Organization
 import org.pih.warehouse.core.Person
 import org.pih.warehouse.core.User
 import org.pih.warehouse.inventory.InventoryItem
@@ -29,6 +30,10 @@ class OrderItem implements Serializable {
     Integer quantityFulfilled
     BigDecimal unitPrice
     String currencyCode
+    String sourceCode
+    String supplierCode
+    Organization manufacturer
+    String manufacturerCode
 
     User requestedBy    // the person who actually requested the item
     Person recipient
@@ -69,6 +74,10 @@ class OrderItem implements Serializable {
         recipient(nullable: true)
         currencyCode(nullable: true)
         quantityFulfilled(nullable: true)
+        sourceCode(nullable: true)
+        supplierCode(nullable: true)
+        manufacturer(nullable: true)
+        manufacturerCode(nullable: true)
     }
 
 
